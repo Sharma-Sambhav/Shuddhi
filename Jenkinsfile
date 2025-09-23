@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        DEPLOY_USER = 'ununtu'
+        DEPLOY_USER = 'ubuntu'
         DEPLOY_HOST = 'demoshuddhi.sambhav.click'
         APP_DIR = '/home/ubuntu/Shuddhi/Shuddhi'
     }
@@ -24,7 +24,7 @@ pipeline{
         stage('Deploy') {
                 steps {
                     sshagent(['deploy-key']) {
-                    sh "ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'cd ${APP_DIR} && git pull origin main && npm ci && npm run build && pm2 restart Shuddhi-App'"
+                    sh "ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'cd ${APP_DIR} && git pull origin main && npm ci && npm run build && pm2 restart Shuddhi'"
                     }
                  }
         }
