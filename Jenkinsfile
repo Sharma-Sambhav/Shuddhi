@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         DEPLOY_USER = 'ubuntu'
-        DEPLOY_HOST = 'demoshuddhi.sambhav.click'
+        DEPLOY_HOST = 'scanpie.sambhav.click'
         APP_DIR = '/home/ubuntu/Shuddhi/Shuddhi'
     }
     stages{
