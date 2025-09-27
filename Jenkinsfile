@@ -23,8 +23,8 @@ pipeline{
         }
         stage('Deploy') {
                 steps {
-                    sshagent(['deploy-key']) {
-                    sh "ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'cd ${APP_DIR} && git pull origin main && npm ci && npm run build && pm2 restart Shuddhi'"
+                    sshagent(['jenkins_deploy']) {
+                    sh "ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_HOST} 'cd ${APP_DIR} && git pull origin main && npm ci && npm run build && pm2 restart Scanpie'"
                     }
                  }
         }
