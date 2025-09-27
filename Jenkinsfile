@@ -3,7 +3,7 @@ pipeline{
     environment{
         DEPLOY_USER = 'ubuntu'
         DEPLOY_HOST = 'scanpie.sambhav.click'
-        APP_DIR = '/home/ubuntu/Shuddhi/Shuddhi'
+        APP_DIR = '/home/ubuntu/Shuddhi'
     }
     stages{
         stage("Checkout"){
